@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/loading.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+
+<body id="body" style="opacity: 0;">
+    <div id = "text_container">
+        <h2 class="gradient_header">STEP 1: Upload your own image</h2>
+        <p class="gradient_text">Please make sure the image is not blurry and is fully visible</p>
+    </div>
+    <form action="/garment" method="post" enctype="multipart/form-data" id="form_drop_area">
+        <label for="input-file" id="drop_area">
+            <input type="file" name="file" accept="image/*" id="input-file" hidden />
+            <div id="image_view">
+                <div id="main_container">
+                    <img src="{{ url_for('static', filename='upload_icon.png')}}">
+                    <span style="margin-top: 60px;">Upload your image here</span>
+                </div>
+            </div>
+        </label>
+        <input type="submit" id="input_button" hidden />
+    </form>
+
+    <script src="{{ url_for('static', filename='js/script.js')}}"></script>
+</body>
+
+</html>
