@@ -9,7 +9,7 @@ os.environ["FAL_KEY"] = 'your-api-key'
 app = Flask(__name__)
 
 def generateImage(garmentLocation):
-    urlHuman = fal_client.upload_file(r"C:\Users\Lakshmanaprakash S B\Documents\GitHub\byteforce_project\human_images_uploaded\human_image.jpg")
+    urlHuman = fal_client.upload_file(r"human_images_uploaded\human_image.jpg")
     urlGarment = fal_client.upload_file(garmentLocation)
 
     handler = fal_client.submit(
